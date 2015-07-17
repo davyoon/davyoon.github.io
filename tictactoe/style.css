@@ -1,3 +1,9 @@
+body{
+	background-image: url("img/black.jpg");
+	background-size: 100%;
+
+}
+
 h2{
 	text-align: center;
 	font-size: 40px;
@@ -9,7 +15,7 @@ h2{
 	position: relative;
 	height: 900px;
 	width: 900px;
-	background-color: yellow;
+	background-size: 100%;
 	margin: 150px;
 }
 
@@ -20,10 +26,10 @@ h2{
 .container{
 	height: 660px;
 	width: 660px;
-	background-color: blue;
 	position: absolute;
 	top: 40px;
 	left: 40px;
+	opacity: 10;
 }
 
 .scoreBoard{
@@ -51,19 +57,32 @@ h2{
 	height: 200px;
 	display: inline-block;
 	margin: 10px;
-	background: red;
+	background-image: url("img/metal.jpg");
 	vertical-align:top;
 	text-align: center;
+	opacity: .7;
 }
 
 
-#opic{
-	background-image: url("img/opic.jpg");
+.opic{
+	background-image: url("img/metalO.jpg");
 	background-size: 100%;
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	margin: 10px;
+	vertical-align:top;
+	text-align: center;
 	
 }
 
-#xpic{
-	background-image: url("img/xpic.png");
+.xpic{
+	background-image: url("img/metalX.jpg");
 	background-size: 100%;
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	margin: 10px;
+	vertical-align:top;
+	text-align: center;
 }
