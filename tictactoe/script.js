@@ -26,8 +26,16 @@ var checkWinner = function(){
 	for(var i = 0; i < winningCombo.length; i++){
 		if(oArray.sort().join() === winningCombo[i].join()){
 			console.log("o wins!!!");
+			var $scoreOne = parseInt($("#score1").text());
+			$scoreOne += 1;
+			console.log($scoreOne);
+			for(var i = 0; i < oArray.length; i++)
+
+
 		}else if(xArray.sort().join() === winningCombo[i].join()){
 			console.log("x wins!!!");
+			var $scoreTwo = parseInt($("#score2").text());
+			$scoreTwo += 1;
 		}
 	}
 }
