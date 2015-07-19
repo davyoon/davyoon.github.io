@@ -1,5 +1,12 @@
 
 
+$(".start").on("click", function(){
+	$(".outside").toggle();
+	$(".start").addClass("hide").removeClass("start");
+
+});
+
+
 var winningCombo = [[0,1,2], [3,4,5], [6,7,8], [2,5,8], [1,4,7], [0,3,6], [0,4,8], [2,4,6]];
 var turnCounter = 0;
 var oArray = [null, null, null, null, null, null, null, null, null];
@@ -12,7 +19,7 @@ var gameOver = false;
 var setGame = function(){
 	
 for(var i = 0; i < 9; i++){
-		$div = $("<div class='box'>").attr("id",[i])
+		$div = $("<div class='box'>").attr("id",[i]).addClass("hvr-grow");
 		var $container = $(".container");
 		click = false;
 		$container.append($div);
@@ -27,7 +34,7 @@ var checkWinner = function(){
 	if(oArray[0] === "O" && oArray[0] === oArray[1] && oArray[1] === oArray[2]  ||  oArray[3] === "O" && oArray[3] === oArray[4] && oArray[4] === oArray[5]  ||  oArray[6] === "O" && oArray[6] === oArray[7] && oArray[7] === oArray[8]
 		|| oArray[2] === "O" && oArray[2] === oArray[5] && oArray[5] === oArray[8]  ||  oArray[1] === "O" && oArray[1] === oArray[4] && oArray[4] === oArray[7]	||  oArray[0] === "O" && oArray[0] === oArray[3] && oArray[3] === oArray[6]
 		|| oArray[0] === "O" && oArray[0] === oArray[4] && oArray[4] === oArray[8]	||	oArray[2] === "O" && oArray[2] === oArray[4] && oArray[4] === oArray[6]){
-		console.log("O wins");
+		alert("O wins");
 		gameOver = true;
 
 
@@ -35,9 +42,12 @@ var checkWinner = function(){
 	} else if(xArray[0] === "X" && xArray[0] === xArray[1] && xArray[1] === xArray[2]  ||  xArray[3] === "X" && xArray[3] === xArray[4] && xArray[4] === xArray[5]  ||  xArray[6] === "X" && xArray[6] === xArray[7] && xArray[7] === xArray[8]
 		|| xArray[2] === "X" && xArray[2] === xArray[5] && xArray[5] === xArray[8]  ||  xArray[1] === "X" && xArray[1] === xArray[4] && xArray[4] === xArray[7]	||  xArray[0] === "X" && xArray[0] === xArray[3] && xArray[3] === xArray[6]
 		|| xArray[0] === "X" && xArray[0] === xArray[4] && xArray[4] === xArray[8]	||	xArray[2] === "X" && xArray[2] === xArray[4] && xArray[4] === xArray[6]){
-		console.log("X wins");
+		alert("X wins");
 		gameOver = true;
-	}		
+	
+	}	else if(turnCounter === 9){
+		alert("its  a tie");
+	}
 
 
 
@@ -91,6 +101,7 @@ var startGame = function() {
 			}
 
 			turnCounter += 1;
+			console.log(turnCounter);
 			checkWinner();
 		}else if(gameOver === true){
 			$(".box").unbind("click");
