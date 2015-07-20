@@ -1,10 +1,16 @@
+$(document).ready(function(){
+
 
 
 $(".start").on("click", function(){
 	$(".outside").toggle();
 	$(".start").addClass("hide").removeClass("start");
-
+	$("body").addClass("backImage");
 });
+
+$("#close").on("click", function(){
+	$(".congrats").toggle();
+})
 
 
 var winningCombo = [[0,1,2], [3,4,5], [6,7,8], [2,5,8], [1,4,7], [0,3,6], [0,4,8], [2,4,6]];
@@ -16,10 +22,11 @@ var gameOver = false;
 
 
 
+
 var setGame = function(){
 	
 for(var i = 0; i < 9; i++){
-		$div = $("<div class='box'>").attr("id",[i]).addClass("hvr-grow");
+		$div = $("<div class='box'>").attr("id",[i]);
 		var $container = $(".container");
 		click = false;
 		$container.append($div);
@@ -28,22 +35,23 @@ for(var i = 0; i < 9; i++){
 setGame();
 
 
-
 var checkWinner = function(){
-	var score1 = $("#score1").text();
+	var score1 = parseInt($("#score1").text());
 	if(oArray[0] === "O" && oArray[0] === oArray[1] && oArray[1] === oArray[2]  ||  oArray[3] === "O" && oArray[3] === oArray[4] && oArray[4] === oArray[5]  ||  oArray[6] === "O" && oArray[6] === oArray[7] && oArray[7] === oArray[8]
 		|| oArray[2] === "O" && oArray[2] === oArray[5] && oArray[5] === oArray[8]  ||  oArray[1] === "O" && oArray[1] === oArray[4] && oArray[4] === oArray[7]	||  oArray[0] === "O" && oArray[0] === oArray[3] && oArray[3] === oArray[6]
 		|| oArray[0] === "O" && oArray[0] === oArray[4] && oArray[4] === oArray[8]	||	oArray[2] === "O" && oArray[2] === oArray[4] && oArray[4] === oArray[6]){
-		alert("O wins");
 		gameOver = true;
+		$(".congrats").toggle();
+		score1 = 2;
+		
 
 
 
 	} else if(xArray[0] === "X" && xArray[0] === xArray[1] && xArray[1] === xArray[2]  ||  xArray[3] === "X" && xArray[3] === xArray[4] && xArray[4] === xArray[5]  ||  xArray[6] === "X" && xArray[6] === xArray[7] && xArray[7] === xArray[8]
 		|| xArray[2] === "X" && xArray[2] === xArray[5] && xArray[5] === xArray[8]  ||  xArray[1] === "X" && xArray[1] === xArray[4] && xArray[4] === xArray[7]	||  xArray[0] === "X" && xArray[0] === xArray[3] && xArray[3] === xArray[6]
 		|| xArray[0] === "X" && xArray[0] === xArray[4] && xArray[4] === xArray[8]	||	xArray[2] === "X" && xArray[2] === xArray[4] && xArray[4] === xArray[6]){
-		alert("X wins");
 		gameOver = true;
+		$(".congrats").toggle();
 	
 	}	else if(turnCounter === 9){
 		alert("its  a tie");
@@ -113,11 +121,7 @@ var startGame = function() {
 
 
 
-
-
-
-	$replay.on("click", function(){
-		console.log("hello");
+$replay.on("click", function(){
 		turnCounter = 0;
 		oArray = [null, null, null, null, null, null, null, null, null];
 		xArray = [null, null, null, null, null, null, null, null, null];
@@ -126,13 +130,41 @@ var startGame = function() {
 		$spot.click(proceed);
 
 
+
+
+
+
+
+
+
+
 	})
+
+		
+
+		$(".nButt1").on("click", function(){
+			var $name1Input = $(".name1Input").val();
+			$(".name1").text($name1Input);
+			$(".name1Input").val(" ");
+
+		});
+
+
+		$(".nButt2").on("click", function(){
+			var $name2Input = $(".name2Input").val();
+			$(".name2").text($name2Input);
+			$(".name2Input").val(" ");
+
+		});
+
 
 
 
 }
 
 startGame();
+
+
 
 
 
@@ -173,4 +205,4 @@ startGame();
 
 //  	diagWin	
 
-
+});
