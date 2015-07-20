@@ -244,10 +244,32 @@ p{
 	top: 520px;
 }
 
+.name1{
+	color: orange;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+.name2{
+	color: orange;
+	font-size: 20px;
+	font-family: sans-serif;
+
+}
 
 
 
+.nButt1{
+	position: relative;
+	left: 76px;
 
+}
+
+.nButt2{
+	position: relative;
+	left: 76px;
+
+}
 
 
 

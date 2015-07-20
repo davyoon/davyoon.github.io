@@ -8,9 +8,24 @@ $(".start").on("click", function(){
 	$("body").addClass("backImage");
 });
 
+
 $("#close").on("click", function(){
 	$(".congrats").toggle();
-})
+});
+
+
+$(".nButt1").on("click", function(){
+	var $name1Input = $(".name1Input").val();
+	$(".name1").text($name1Input);
+	$(".name1Input").val(" ");
+});
+
+
+$(".nButt2").on("click", function(){
+	var $name2Input = $(".name2Input").val();
+	$(".name2").text($name2Input);
+	$(".name2Input").val(" ");
+});
 
 
 var winningCombo = [[0,1,2], [3,4,5], [6,7,8], [2,5,8], [1,4,7], [0,3,6], [0,4,8], [2,4,6]];
@@ -18,8 +33,6 @@ var turnCounter = 0;
 var oArray = [null, null, null, null, null, null, null, null, null];
 var xArray = [null, null, null, null, null, null, null, null, null];
 var gameOver = false;
-
-
 
 
 
@@ -36,13 +49,17 @@ setGame();
 
 
 var checkWinner = function(){
+	//var  score1 = $('#score1');
 	var score1 = parseInt($("#score1").text());
+	var score2 = parseInt($("#score2").text());
+
 	if(oArray[0] === "O" && oArray[0] === oArray[1] && oArray[1] === oArray[2]  ||  oArray[3] === "O" && oArray[3] === oArray[4] && oArray[4] === oArray[5]  ||  oArray[6] === "O" && oArray[6] === oArray[7] && oArray[7] === oArray[8]
 		|| oArray[2] === "O" && oArray[2] === oArray[5] && oArray[5] === oArray[8]  ||  oArray[1] === "O" && oArray[1] === oArray[4] && oArray[4] === oArray[7]	||  oArray[0] === "O" && oArray[0] === oArray[3] && oArray[3] === oArray[6]
 		|| oArray[0] === "O" && oArray[0] === oArray[4] && oArray[4] === oArray[8]	||	oArray[2] === "O" && oArray[2] === oArray[4] && oArray[4] === oArray[6]){
 		gameOver = true;
 		$(".congrats").toggle();
-		score1 = 2;
+		$("#score1").text(score1 += 1);
+
 		
 
 
@@ -52,6 +69,7 @@ var checkWinner = function(){
 		|| xArray[0] === "X" && xArray[0] === xArray[4] && xArray[4] === xArray[8]	||	xArray[2] === "X" && xArray[2] === xArray[4] && xArray[4] === xArray[6]){
 		gameOver = true;
 		$(".congrats").toggle();
+			$("#score2").text(score += 1);
 	
 	}	else if(turnCounter === 9){
 		alert("its  a tie");
@@ -115,13 +133,13 @@ var startGame = function() {
 			$(".box").unbind("click");
 		}
 
-	}
+	};
 
 	$spot.click(proceed);
 
 
-
-$replay.on("click", function(){
+	
+	$replay.on("click", function(){
 		turnCounter = 0;
 		oArray = [null, null, null, null, null, null, null, null, null];
 		xArray = [null, null, null, null, null, null, null, null, null];
@@ -138,24 +156,7 @@ $replay.on("click", function(){
 
 
 
-	})
-
-		
-
-		$(".nButt1").on("click", function(){
-			var $name1Input = $(".name1Input").val();
-			$(".name1").text($name1Input);
-			$(".name1Input").val(" ");
-
-		});
-
-
-		$(".nButt2").on("click", function(){
-			var $name2Input = $(".name2Input").val();
-			$(".name2").text($name2Input);
-			$(".name2Input").val(" ");
-
-		});
+	 });
 
 
 
@@ -166,7 +167,7 @@ startGame();
 
 
 
-
+});
 
 
 
@@ -205,4 +206,4 @@ startGame();
 
 //  	diagWin	
 
-});
+
