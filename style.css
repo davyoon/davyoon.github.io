@@ -31,6 +31,13 @@ p{
 
 }
 
+.nameField{
+	border: 3px solid #095573;
+	width: 220px;
+	padding: 10px;
+	position: relative;
+	top: 50px;
+}
 
 .container{
 	height: 660px;
@@ -60,6 +67,7 @@ p{
 	left: 200px;
 	font-size: 20px;
 	background-size: 100%;
+	display: none;
 
 }	
 
@@ -73,10 +81,6 @@ p{
 	vertical-align:top;
 	text-align: center;
 
-}
-
-.box:hover{
-	cursor: url("img/metal.jpg");
 }
 
 
@@ -123,88 +127,23 @@ p{
 	opacity: .9;
 }
 
-@-webkit-keyframes hvr-ripple-out {
-  100% {
-    top: -12px;
-    right: -12px;
-    bottom: -12px;
-    left: -12px;
-    opacity: 0;
-  }
-}
-
-@keyframes hvr-ripple-out {
-  100% {
-    top: -12px;
-    right: -12px;
-    bottom: -12px;
-    left: -12px;
-    opacity: 0;
-  }
-}
-
-
-.hvr-ripple-out {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-}
-.hvr-ripple-out:before {
-  content: '';
-  position: absolute;
-  border: #e1e1e1 solid 6px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-}
-.hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
-  -webkit-animation-name: hvr-ripple-out;
-  animation-name: hvr-ripple-out;
-}
 
 .start {
-  background: #292929;
-  background-image: -webkit-linear-gradient(top, #292929, #62a7d1);
-  background-image: -moz-linear-gradient(top, #292929, #62a7d1);
-  background-image: -ms-linear-gradient(top, #292929, #62a7d1);
-  background-image: -o-linear-gradient(top, #292929, #62a7d1);
-  background-image: linear-gradient(to bottom, #292929, #62a7d1);
-  -webkit-border-radius: 33;
-  -moz-border-radius: 33;
-  border-radius: 33px;
-  text-shadow: 6px 4px 2px #666666;
-  -webkit-box-shadow: 0px 1px 30px #666666;
-  -moz-box-shadow: 0px 1px 30px #666666;
-  box-shadow: 0px 1px 30px #666666;
   font-family: Arial;
-  color: #d6c0d6;
-  font-size: 53px;
+  color: #095573;
+  font-size: 50px;
   padding: 10px 20px 10px 20px;
-  border: solid #1f628d 1px;
+  border: solid #095573 5px;
   text-decoration: none;
   position: absolute;
   left: 50px;
   top: 550px;
-
+  background-color: #FCE94D;
+	border-radius: 30%;
 }
 
 .start:hover {
   background: #57d1f0;
-  background-image: -webkit-linear-gradient(top, #57d1f0, #3498db);
-  background-image: -moz-linear-gradient(top, #57d1f0, #3498db);
-  background-image: -ms-linear-gradient(top, #57d1f0, #3498db);
-  background-image: -o-linear-gradient(top, #57d1f0, #3498db);
-  background-image: linear-gradient(to bottom, #57d1f0, #3498db);
-  text-decoration: none;
 }
 
 
@@ -257,19 +196,6 @@ p{
 
 }
 
-
-
-.nButt1{
-	position: relative;
-	left: 76px;
-
-}
-
-.nButt2{
-	position: relative;
-	left: 76px;
-
-}
 
 
 
