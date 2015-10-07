@@ -1,6 +1,7 @@
 body{
 	background-image: url("img/minionsBg.jpg");
-	background-size: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .backImage{
@@ -34,8 +35,8 @@ p{
 	border: 3px solid #095573;
 	width: 220px;
 	padding: 10px;
-	position: relative;
-	top: 50px;
+	margin-top: 50px;
+	margin-left: 50px;
 }
 
 .container{
@@ -120,9 +121,9 @@ p{
   padding: 10px 20px 10px 20px;
   border: solid #095573 5px;
   text-decoration: none;
-  position: absolute;
-  left: 50px;
-  top: 550px;
+ /* position: absolute;*/
+  margin-left: 50px;
+  margin-top: 450px;
   background-color: #FCE94D;
 	border-radius: 30%;
 }
